@@ -60,5 +60,18 @@ client.on("guildMemberRemove", member => {
 }).catch(console.error)
 });
 
+client.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('.bcall')){
+ if (message.author.id !== '474276191117770753') return message.reply('**Not For You !**')
+ if(!message.author.id === '474276191117770753') return;
+message.channel.sendMessage('جار ارسال الرسالة |✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
 
 client.login(process.env.BOT_TOKEN);
