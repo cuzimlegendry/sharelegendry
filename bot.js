@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+ const prefix = ".";
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+    console.log('I am ready!');
 });
-
-client.login('NDc0Mjc2MTkxMTE3NzcwNzUz.Dlg0zQ.107DeLWXNrfIQurQsrOyJmlRMWY');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -61,3 +59,6 @@ client.on("guildMemberRemove", member => {
 **`)
 }).catch(console.error)
 });
+
+
+client.login(process.env.BOT_TOKEN);
